@@ -55,7 +55,11 @@ export default function App() {
         calculator()
         return
       case '+/-':
-        return
+        if (currentNumber === '' || isNaN(currentNumber)) {
+          return;
+        }
+        setCurrentNumber((currentNumber * (-1)).toString());
+        return;
     }
 
     setCurrentNumber(currentNumber + buttonPressed)
